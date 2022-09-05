@@ -18,7 +18,7 @@ If you are running as root try
 - SMTP (Mail) notifications when a change is made or an error occours
 
 ## License
-Please see license.md for information
+Please see LICENSE.md for information. Please note that markdown may make the license appear weird. The raw file is the license. 
 
 ## Acknowledgements
 This software uses the requests library licensed under the Apache License 2.0
