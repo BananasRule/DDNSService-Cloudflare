@@ -5,6 +5,14 @@
 ## Discription
 This is a python program that allows you to dynamically update your cloudflare dns records. This can be useful with a home system where your ip is dynamically assigned and changes. 
 
+## Instalation
+One click install is supported via this command
+> wget https://raw.githubusercontent.com/DDNSService-Cloudflare/master/setup.sh && sudo bash setup.sh
+
+If you are running as root try
+> wget https://raw.githubusercontent.com/DDNSService-Cloudflare/master/setup.sh && bash setup.sh
+
+
 ## Features
 - Easy to run
 - SMTP (Mail) notifications when a change is made or an error occours
