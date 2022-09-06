@@ -10,7 +10,7 @@ One click install is supported via this command
 > wget https://raw.githubusercontent.com/BananasRule/DDNSService-Cloudflare/main/setup.sh && sudo bash setup.sh
 
 If you are running as root try
-> wget https://raw.githubusercontent.com/BananasRule/DDNSService-Cloudflare/main/setup.sh setup.sh
+> wget https://raw.githubusercontent.com/BananasRule/DDNSService-Cloudflare/main/setup.sh && bash setup.sh
 
 Once the script is finished please fill in the open config file (DDNSConfig.conf)
 
