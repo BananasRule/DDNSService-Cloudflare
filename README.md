@@ -7,10 +7,10 @@ This is a python program that allows you to dynamically update your cloudflare d
 
 ## Installation
 One click install is supported via this command
-> wget https://raw.githubusercontent.com/DDNSService-Cloudflare/master/setup.sh && sudo bash setup.sh
+> wget https://raw.githubusercontent.com/BananasRule/DDNSService-Cloudflare/main/setup.sh && sudo bash setup.sh
 
 If you are running as root try
-> wget https://raw.githubusercontent.com/DDNSService-Cloudflare/master/setup.sh && bash setup.sh
+> wget https://raw.githubusercontent.com/BananasRule/DDNSService-Cloudflare/main/setup.sh setup.sh
 
 Once the script is finished please fill in the open config file (DDNSConfig.conf)
 
