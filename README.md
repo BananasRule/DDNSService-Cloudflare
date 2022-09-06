@@ -1,7 +1,7 @@
 # DDNSService-Cloudflare
 ## THIS APPLICATION IS NOT ENDORSED, SPONSORED OR ASSOCIATED WITH CLOUDFLARE
 ## THIS APPLICATION USES THE CLOUDFLARE API V4
-<br>
+
 ## Discription
 This is a python program that allows you to dynamically update your cloudflare dns records. This can be useful with a home system where your ip is dynamically assigned and changes. 
 
