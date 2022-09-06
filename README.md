@@ -12,6 +12,8 @@ One click install is supported via this command
 If you are running as root try
 > wget https://raw.githubusercontent.com/DDNSService-Cloudflare/master/setup.sh && bash setup.sh
 
+Once the script is finished please fill in the open config file (DDNSConfig.conf)
+
 
 ## Features
 - Easy to run
