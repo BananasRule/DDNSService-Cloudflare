@@ -11,7 +11,7 @@ mkdir DDNSService-Cloudflare
 curl -L https://github.com/BananasRule/DDNSService-Cloudflare/tarball/master | tar -xz -C DDNSService-Cloudflare --strip-components 1
 ##Add to crontab (from https://stackoverflow.com/questions/878600/how-to-create-a-cron-job-using-bash-automatically-without-the-interactive-editor)
 crontab -l > tempcron
-echo "* * * * * python3 /opt/DDNSService-Cloudflare/DDNSService-Cloudflare.py" >> tempcron
+echo "* * * * * cd /opt/DDNSService-Cloudflare && python3 /opt/DDNSService-Cloudflare/DDNSService-Cloudflare.py" >> tempcron
 crontab tempcron
 rm tempcron
 ##Open config file
