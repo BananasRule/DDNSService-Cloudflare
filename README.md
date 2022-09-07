@@ -20,6 +20,7 @@ Once the script is finished please fill in the open config file (DDNSConfig.conf
 - SMTP (Mail) notifications when a change is made or an error occours
 
 ## License
+This repository is licensed under MPL 2.0. Please also include the atribution '© Jacob Gray 2022'.
 Please see LICENSE.md for information. Please note that markdown may make the license appear weird. The raw file is the license. 
 
 ## Acknowledgements

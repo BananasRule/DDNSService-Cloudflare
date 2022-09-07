@@ -1,4 +1,10 @@
+##© Jacob Gray 2022
+##This Source Code Form is subject to the terms of the Mozilla Public
+##License, v. 2.0. If a copy of the MPL was not distributed with this
+##file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
 ##A python program designed to update dns records on cloudflare when your IP address changes
+
 ## THIS APPLICATION IS NOT ENDORSED, SPONSORED OR ASSOCIATED WITH CLOUDFLARE
 ## THIS APPLICATION USES THE CLOUDFLARE API V4
 
