@@ -12,18 +12,25 @@ import requests, time
 # @returns Current IP Address (String)
 def getIP():
     try:
-        ipAddressResponce = requests.get("https://api.ipify.org/")
-        currentIPAddress = ipAddressResponce.text
+        ipAddressResponce = getIPPrimary()
     except:
         time.sleep(30)
         try:
-            ipAddressResponce = requests.get("https://api.ipify.org/")
-            currentIPAddress = ipAddressResponce.text
+            ipAddressResponce = getIPFallback()
         except:
             raise getIPError()
     if ipAddressResponce.status_code != 200:
         raise getIPError()
-    return currentIPAddress
+    return ipAddressResponce.text
+
+def getIPPrimary():
+    ipAddressResponce = requests.get("https://api.ipify.org/")
+    return ipAddressResponce
+
+def getIPFallback():
+    ipAddressResponce = requests.get("https://ip.seeip.org")
+    return ipAddressResponce
+
 
 class getIPError(Exception):
     pass
