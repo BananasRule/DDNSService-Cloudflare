@@ -11,23 +11,35 @@ import requests, time
 # @throws getIPError Cannot connect to server / Invalid responce 
 # @returns Current IP Address (String)
 def getIP():
-    try:
-        ipAddressResponce = getIPPrimary()
-    except:
-        time.sleep(30)
+    #Attempt to get IP upto 30 times from both primary and fallback services if unsuccessful
+    #Will immediatly return if ip address was sucessfuly obtained from either source
+    attemptCounter = 0
+    while attemptCounter <= 30:
         try:
-            ipAddressResponce = getIPFallback()
+            ipAddressResponce = getIPPrimary()
+            if ipAddressResponce.status_code != 200:
+                raise getIPError()
+            else:
+                #This is not the best way of doing this, but as it is a short and
+                #simple function this is still readable and maybe more so then 
+                #other approches 
+                return ipAddressResponce.text
         except:
-            raise getIPError()
-    if ipAddressResponce.status_code != 200:
-        raise getIPError()
-    return ipAddressResponce.text
-
-def getIPPrimary():
+            try:
+                ipAddressResponce = getIPFallback()
+                if ipAddressResponce.status_code != 200:
+                    raise getIPError()
+                else:
+                    return ipAddressResponce.text
+            except:
+                attemptCounter = attemptCounter + 1
+        
+#Define IP services
+def getIPFallback():
     ipAddressResponce = requests.get("https://api.ipify.org/")
     return ipAddressResponce
 
-def getIPFallback():
+def getIPPrimary():
     ipAddressResponce = requests.get("https://ip.seeip.org")
     return ipAddressResponce
 

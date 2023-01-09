@@ -44,12 +44,20 @@ currentMsgHash = previousMessageHash
 #Attempt to get current IP Address
 try:
     currentIP = getIP.getIP()
-except:
+except getIP.getIPError():
     #In case of failure attempt to send an email and then exit
-    errorLog("An error occourred when getting current IP Address")
+    errorLog("An error occourred when getting current IP Address from service")
     try:
         mail = DDNSConfigLoader.loadSMTPObject(configFilename)
-        currentMsgHash = mailSend.composeMessage(mail, [["An error occured getting the IP address", "All records"]], False, previousMessageHash, "Unable to determine")
+        currentMsgHash = mailSend.composeMessage(mail, [["An error occured getting the IP address from service", "All records"]], False, previousMessageHash, "Unable to determine")
+    except:
+        pass
+    exit()
+except:
+    errorLog("An error occourred when getting current IP Address unrelated to service issues")
+    try:
+        mail = DDNSConfigLoader.loadSMTPObject(configFilename)
+        currentMsgHash = mailSend.composeMessage(mail, [["An error occured getting the IP address unrelated to service issues", "All records"]], False, previousMessageHash, "Unable to determine")
     except:
         pass
     exit()
